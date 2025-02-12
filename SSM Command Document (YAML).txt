@@ -1,0 +1,11 @@
+schemaVersion: "2.2"
+description: "Install and start Apache HTTPD on Amazon Linux"
+mainSteps:
+  - action: "aws:runShellScript"
+    name: "installHttpd"
+    inputs:
+      runCommand:
+        - "sudo yum install -y httpd"
+        - "sudo systemctl start httpd"
+        - "sudo systemctl enable httpd"
+        - "sudo systemctl status httpd"
